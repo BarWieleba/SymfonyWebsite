@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Kategorie
+{% endblock %}
+
+{% block body %}
+    <h1>Kategorie</h1>
+    <ul class="row container-md">
+        <li class="col-sm-3 list-unstyled"><a href={{ path('farming_genre') }}>Gry farmingowe</a> </li>
+        <li class="col-sm-9 list-unstyled"> Gry o tematyce rolniczej, skupiające się na otwartym świecie, w któym gracz z niewielkim kapitałem ma rozbudować swoje gospodarstwo </li>
+        <li class="col-sm-3 list-unstyled"><a href={{ path('fps_genre') }}>Gry strzelanki</a> </li>
+        <li class="col-sm-9 list-unstyled"> Gry o tematyce strzelania z broni palnej z perspektywy pierwszej osoby</li>
+        <li class="col-sm-3 list-unstyled"><a href={{ path('rpg_genre') }}>Gry RPG</a> </li>
+        <li class="col-sm-9 list-unstyled"> Gry o tematyce Role Playingu, wcielamy się w osobą rzuconą w owarty świat, w którym na gracza czeka wiele ciekawych przygód i wyzwań </li>
+    </ul>
+{% endblock %}

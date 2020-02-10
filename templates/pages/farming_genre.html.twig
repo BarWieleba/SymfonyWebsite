@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if games %}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>
+                    Tytuł
+                </th>
+                <th>
+                    Treść
+                </th>
+                <th>
+                    Ustawienia
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for game in games %}
+                {% if game.genre is same as('farming_genre') %}
+
+                    <tr>
+                        <td>
+                            {{ game.title }}
+                        </td>
+                        <td>
+                            {{ game.body }}
+                        </td>
+                        <td>
+                            <a href={{ path('delete_game', {'id': game.id}) }} class="btn btn-danger">-</a>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Brak gier do wyświetlenia</p>
+    {% endif %}
+
+    <a class="btn btn-dark" href={{ path('new_game', {'id': id ,'genre': 'farming_genre'}) }}>+</a>
+{% endblock %}

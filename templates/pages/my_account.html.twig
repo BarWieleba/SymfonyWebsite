@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Moje konto</h1>
+    {% for content in contents [1:] %}
+        <h6>{{ content }} </h6><br>
+    {% endfor %}
+    <a href={{ path('delete', {'id': contents.id}) }} class="btn btn-danger">Usuń konto</a>
+
+{% endblock %}
